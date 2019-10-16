@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  /*$("#hamburger").click(function() {
-    $(".navbar").slideToggle();
-  });*/
+  $(".ham").click(function() {
+   $(".options").slideToggle();
+  });
 });
