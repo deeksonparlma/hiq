@@ -3,13 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
-body{
-  /* background: rgba(0,20,150,0.5); */
-}
 p{
-  /* color: white; */
+  color: white
 }
 @media only screen and (min-width:800px){
+  body{
+    background-image: linear-gradient(125deg,#b8e974,#6a89cc);
+    height: 430vh;
+  }
   .logo{
     height: 50px;
   }
@@ -22,6 +23,7 @@ p{
     height: 60px;
     background-image: linear-gradient(125deg,#6a89cc,#b8e994);
     z-index: 3;
+    opacity: 1;
   }
   .ham{
     display: none;
@@ -182,6 +184,10 @@ p{
 
 
 @media only screen and (max-width:800px){
+  body{
+    background-image: linear-gradient(125deg,#b8e974,#6a89cc);
+    height: 220vh;
+  }
   .logo{
     height: 40px;
   }
@@ -190,6 +196,7 @@ p{
     width: 100%;
     display: block;
     background-image: linear-gradient(125deg,#6a89cc,#b8e994);
+    opacity: 1;
     z-index: 3;
   }
   .first{
@@ -353,7 +360,7 @@ p{
   }
   .footerIcon{
     padding-top: 10px;
-    height: 40px;
+    width: 30px;
     margin-left: 20%;
     margin-right: 10%;
   }
