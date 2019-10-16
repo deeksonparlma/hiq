@@ -6,6 +6,9 @@
 p{
   color: white
 }
+.form-control{
+  width: 80%;
+}
 @media only screen and (min-width:800px){
   body{
     background-image: linear-gradient(125deg,#b8e974,#6a89cc);
