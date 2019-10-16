@@ -404,7 +404,7 @@ p{
     position: fixed;
     z-index: 4;
     top: 10%;
-    bottom: 10%;
+    bottom: 5%;
     left: 0;
     right: 0;
     display: none;
@@ -430,7 +430,7 @@ p{
     filter: blur(2px);
   }
   .k{
-    margin-top: 25%;
+    margin-top: 20%;
   }
   .close{
     margin-right: 10px;
