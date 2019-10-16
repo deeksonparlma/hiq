@@ -406,8 +406,8 @@ p{
   .form{
     position: fixed;
     z-index: 4;
-    top: 10%;
-    bottom: 5%;
+    top: 5%;
+    bottom: 10%;
     left: 0;
     right: 0;
     display: none;
