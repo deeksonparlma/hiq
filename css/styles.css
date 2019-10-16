@@ -219,6 +219,13 @@ p{
     margin-right: 10px;
     margin-top: 10px;
   }
+  .content{
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    right: 20%;
+    left: 30%;
+  }
 }
 
 
@@ -438,5 +445,15 @@ p{
   .close{
     margin-right: 10px;
     margin-top: 10px;
+  }
+  .content{
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    right: 5%;
+    left: 15%;
+  }
+  .lg{
+    margin-left: 20%;
   }
 }
