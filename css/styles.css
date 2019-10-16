@@ -180,6 +180,42 @@ p{
     margin-left: 30%;
     margin-right: 10%;
   }
+  .form{
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+  }
+  .login{
+    background-image: linear-gradient(125deg,#b8e974,#6a89cc);
+    height: 70%;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .ff{
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.9);
+    filter: blur(2px);
+  }
+  .k{
+    margin-top: 10%;
+  }
+  .close{
+    margin-right: 10px;
+    margin-top: 10px;
+  }
 }
 
 
@@ -363,5 +399,41 @@ p{
     width: 30px;
     margin-left: 20%;
     margin-right: 10%;
+  }
+  .form{
+    position: fixed;
+    z-index: 4;
+    top: 10%;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+    display: none;
+  }
+  .login{
+    background-image: linear-gradient(125deg,#b8e974,#6a89cc);
+    height: 60%;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .ff{
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.9);
+    filter: blur(2px);
+  }
+  .k{
+    margin-top: 25%;
+  }
+  .close{
+    margin-right: 10px;
+    margin-top: 10px;
   }
 }
