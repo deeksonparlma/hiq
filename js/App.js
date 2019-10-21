@@ -5,10 +5,19 @@ $(document).ready(function(){
    $(".options").slideToggle();
    $(".nav").css("opacity", "1");
   });
-
+  $(".backFlip").click(function(){
+    $(".content").toggle();
+    $(".backContent").toggle();
+  });
+  $(".Front").click(function(){
+    $(".content").toggle();
+    $(".backContent").toggle();
+  });
   $(".close").click(function(){
     $(".ff").slideUp();
     $(".form").slideUp();
+    $(".content").toggle();
+    $(".backContent").toggle();
   });
   function showForm() {
     $(".ff").show();
