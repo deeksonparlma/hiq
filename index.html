@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <title>HiQ</title>
   </head>
-  <body>
+  <body class="body">
     <div class="nav">
       <div class="navbar car">
         <img src="img/career.svg" class="logo" alt="">
@@ -18,7 +18,7 @@
         <img src="img/hamburger.jpg" class="logo" alt="">
       </div>
       <div class="navbar first options">
-        <a href="#">Home</a>
+        <a href="index.html">Home</a>
       </div>
       <div class="navbar options">
         <a href="#">Events</a>
@@ -30,7 +30,7 @@
         <a href="#">Contact</a>
       </div>
       <div class="navbar options">
-          <button type="button" id="showForm" class="btn btn-success topbtn" name="button">Log in</button>
+          <button type="button" id="showForm"  class="btn btn-success topbtn" name="button">Log in</button>
       </div>
       <!-- <div class="navbar options">
           <button type="button" id="showForm" class="btn btn-info topbtn" name="button">Sign Up</button>
@@ -72,9 +72,9 @@
         <p class="close">X</p>
         <div class="content">
         <label class="k z" for="">Email</label><br>
-        <input type="email" class="form-control" name="" value=""><br>
+        <input type="email" id="email" class="form-control" name="" value="" required><br>
         <label for="">Password</label><br>
-        <input type="password" class="form-control" name="" value="">
+        <input type="password" id="password" class="form-control" name="" value="" required>
         <br><br>
         <button type="submit" class="btn btn-success lg" name="button">Login</button>
           <span class="backFlip"> Or Sign Up</span>
@@ -109,4 +109,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js" ></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/App.js"></script>
+    <script>
+      // document.getElementById("showForm").onclick =function(){showForm()};
+    </script>
 </html>

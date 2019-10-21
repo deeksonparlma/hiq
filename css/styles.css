@@ -10,7 +10,8 @@ p{
   width: 80%;
 }
 @media only screen and (min-width:800px){
-  body{
+
+  .body{
     background-image: linear-gradient(125deg,#b8e974,#6a89cc);
     height: 430vh;
   }
@@ -239,11 +240,70 @@ p{
     display: none;
 
   }
+  .user{
+    height: 1000vh;
+    background-image: linear-gradient(125deg,#b8e974,#6a89cc);
+  }
+  .userInfo{
+    position: fixed;
+    height: 100vh;
+    width: 30%;
+    background-image: linear-gradient(125deg,#b8e974,#6a89cc);
+  }
+  .projectList{
+    height: 100vh;
+    width: 65%;
+    position: absolute;
+    top: 0;
+    left: 35%;
+    /* background-color: blue; */
+  }
+  .imgDp{
+    margin-top: 65px;
+    margin-left: 10%;
+    margin-right: 30%;
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+  }
+  .profName{
+    position: absolute;
+    top: 100px;
+    left: 45%;
+  }
+  .upload{
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+  }
+  .title1{
+    margin-top: 65px;
+  }
+  .labels{
+    margin: auto;
+    color: black;
+  }
+  .label{
+    display: flex;
+  }
+  .static{
+    position: fixed;
+    width: 80%;
+  }
+  .logout{
+    position: absolute;
+    bottom: 0;
+  }
+  .updateinfo{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
 }
 
 
 @media only screen and (max-width:800px){
-  body{
+  .body{
     background-image: linear-gradient(125deg,#b8e974,#6a89cc);
     height: 220vh;
   }
@@ -430,6 +490,7 @@ p{
     bottom: 0;
     left: 0;
     right: 0;
+    display: none;
   }
 
   .login{
@@ -479,5 +540,63 @@ p{
   }
   .lg{
     margin-left: 20%;
+  }
+  .user{
+    height: 1000vh;
+    background-image: linear-gradient(125deg,#b8e974,#6a89cc);
+  }
+  .userInfo{
+    position: fixed;
+    height: 100vh;
+    width: 50%;
+    background-image: linear-gradient(125deg,#b8e974,#6a89cc);
+    display: none;
+  }
+  .projectList{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background-color: blue; */
+  }
+  .imgDp{
+    margin-top: 65px;
+    margin-left: 10%;
+    margin-right: 30%;
+    height: 50px;
+    width: 50px;
+  }
+  .profName{
+    margin-top: 65px;
+    margin-left: 50%;
+  }
+  .upload{
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+  }
+  .title1{
+    margin-top: 65px;
+  }
+  .labels{
+    margin: auto;
+    color: black;
+  }
+  .static{
+    position: fixed;
+    width: 100%;
+  }
+  .logout{
+    position: absolute;
+    bottom: 0;
+  }
+  .updateinfo{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .label{
+    display: flex;
   }
 }

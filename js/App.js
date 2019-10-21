@@ -1,6 +1,11 @@
 $(document).ready(function(){
-  document.getElementById("showForm").onclick =function(){showForm()};
-
+  $(".login").submit(function(event){
+    event.preventDefault();
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    // console.log(email + password);
+    window.location.href = "user.html";
+  });
   $(".ham").click(function() {
    $(".options").slideToggle();
    $(".nav").css("opacity", "1");
@@ -19,7 +24,10 @@ $(document).ready(function(){
     $(".content").toggle();
     $(".backContent").toggle();
   });
-  function showForm() {
+  $("#showForm").click(function(){
+    showform();
+  });
+  function showform() {
     $(".ff").show();
     $(".form").slideDown();
   }
