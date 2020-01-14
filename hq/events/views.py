@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .forms import eventfrm
 from .models import events_list
@@ -23,12 +23,14 @@ def add_event(request):
     if request.method=='POST':
         try:
             uname = request.session["username"]
+
         except:
+
             uname = "Anornymous"
 
         events_list.objects.create(event_organizer = uname , event_description = request.POST["event_description"])
+        return redirect("/events/")
 
     else:
+        return render(request , "./events/addevents.html" , context = {"events":eventfrm})
         pass
-
-    return render(request , "./events/addevents.html" , context = {"events":eventfrm})

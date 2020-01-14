@@ -1,3 +1,8 @@
+*
+{
+    padding: 0px;
+    margin: 0px;
+}
 .row
 {
     display: flex;
@@ -37,9 +42,34 @@
     padding: 20px;
     box-sizing: border-box;
 }
+#delete
+{
+    font-size: 1.1em;
+    margin-top: 10px;
+    position: relative;
+    background-color:inherit;
+    left: 5px;
+}
+
 
 #pro-desc
 {
     color: #000;
     text-align: center;
+}
+
+.userInfo>table
+{
+    margin: 3vw;
+    /* opacity: 0; */
+}
+
+input
+{   margin:.5vw;
+    margin-bottom: 0vw;
+    border: 0px;
+    border-bottom: 0px;
+    background-color: inherit;
+    color:#000;
+    height: 40px;
 }

@@ -21,15 +21,22 @@ def login(request):
 
                 request.session["username"] = logstats.First_Name
 
-                logstats.logstatus = 1
+                logstats.logstatus = True
                 logstats.save()
+                # print()
 
                 # request.session["email"] = signup_user.objects.get(Email = request.POST['email'])
 
-                sess = request.session["username"]
 
+                # set the username of the currrent user
+                sess = request.session["username"]
+                # set the session variable email address
                 request.session["email"] = request.POST['email']
 
+                # Expires immediately th user exits the browser
+                request.session.set_expiry(0)
+
+                # redirect users to their profile page
                 return redirect("profile/")
             else:
                 error_var = "Wrong password"

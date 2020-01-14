@@ -41,8 +41,80 @@
     </div>
 
     <div class="userInfo">
-      <img src="{% static './uprofile/img/profile.jpg' %}" class="imgDp" alt="profileImg"> <span class="profName"><b>{{username}}</b></span>
+      <img src="/media/{{profile}}" class="imgDp" alt="profileImg"> <span class="profName"><b>{{username}}</b></span>
       <br>
+
+
+
+      <form class="userInfo" action="{% url 'profile:update' %}" method="post">
+          {% csrf_token %}
+         <table>
+             <tr>
+                 <td>
+                     <label for="">First Name </label>
+                </td>
+                <td>
+                     <input type="text" name="fname" value="{{userinfo.First_Name}}" contenteditable="true">
+                     <br>
+                     <hr>
+                </td>
+             </tr>
+             <tr>
+
+                 <tr>
+                     <td>
+                         <label for="">Second Name </label>
+                    </td>
+                    <td>
+                         <input type="text" name="lname" value="{{userinfo.First_Name}}" contenteditable="true">
+                         <br>
+                         <hr>
+                    </td>
+                 </tr>
+                 <tr>
+
+
+                 <td>
+                     <label for="">Email address </label>
+                </td>
+                <td>
+                     <input type="email" name="email" value="{{userinfo.Email}}" contenteditable="true">
+                     <br>
+                     <hr style="border-top:0px">
+                </td>
+             </tr>
+
+             <tr>
+                 <td>
+                     <label for="">Phone</label>
+                </td>
+                <td>
+                     <input type="text" name="pnumber" value="{{userinfo.Phone_Number}}" contenteditable="true">
+                     <br>
+                     <hr>
+                </td>
+             </tr>
+
+             <tr>
+                 <td>
+                     <label for="">Password</label>
+                </td>
+                <td>
+                     <input type="password" name="password" value="{{userinfo.Password}}" contenteditable="true">
+                     <br>
+                     <hr>
+                </td>
+             </tr>
+
+         </table>
+         <input type="submit" name="submit" value="Update">
+      </form>
+
+
+
+
+
+
       <!--
 
         USER INFO FROM THE DATABASE
@@ -51,7 +123,9 @@
       <a href="{% url 'upload:upload' %}"><button type="button" class="btn btn-info upload" name="button">Upload Project</button></a>
       <br>
       <a href="{% url 'logout:logout' %}"><button type="button" class="btn btn-danger logout" name="button">Log Out</button></a>
-      <a href="{% url 'profile:update' %}"><button type="button" class="btn btn-success updateinfo" name="button">Update info</button></a>
+      <!-- <a href="{% url 'profile:update' %}">
+          <button type="button" class="btn btn-success updateinfo" name="button">Update info</button>
+      </a> -->
     </div>
     <div class="projectList">
       <span class="static">
@@ -72,7 +146,7 @@
                                <h3>{{proj.projectowner}}</h3>
                            </p> -->
                            <p id="pro-desc">{{proj.project_description}}</p>
-
+                           <p id="delete"><a href="{% url 'upload:deleteP' %}">Delete Project</a> </p>
                            <p id="uploadtime">
                                Created on {{proj.uploadtime}}
                            </p>

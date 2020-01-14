@@ -13,7 +13,7 @@
         <title>HiQ | Signup</title>
     </head>
     <body>
-        <form class="" action="{% url 'signup:signup' %}" method="post">
+        <form class="" action="{% url 'signup:signup' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
 
             <div class=""><br>
