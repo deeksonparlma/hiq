@@ -1,0 +1,78 @@
+{% extends './base.html' %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static './Feeds/css/bootstrap.css' %}">
+
+{% block css%}{% static './Feeds/feeds.css' %}{% endblock %}
+<link rel="stylesheet" href="{% static './Feeds/styles.css' %}">
+
+{% block title %} HiQ | Feeds {% endblock %}
+
+
+{% block header %}
+    <h1 >Latest Feeds in HiQ | Feeds </h1>
+
+    <div class="nav-bar">
+        <div class="navbar first options">
+            <a href="{% url 'home:home' %}">Home</a>
+        </div>
+        <div class="navbar options">
+            <a href="{% url 'events:events' %}">Events</a>
+        </div>
+            <!-- <div class="navbar options"> -->
+              <!-- <a href="#">Projects</a> -->
+            <!-- </div> -->
+        <div class="navbar options">
+            <a href="{% url 'developers:contact' %}">Contact</a>
+        </div>
+
+        <div class="navbar options">
+            <a href="{% url 'profile:profile' %}">Profile</a>
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block content %}
+<div class="row">
+
+    <div class="col-6-md col-6-sm col-6-lg child1">
+
+        {% for update in updates %}
+
+            <div class="singular">
+
+                    <ul>
+
+                        {{update.event_organizer}}
+
+                    </ul>
+                    <h6 id = "desc">
+                        {{update.event_description}}
+                    </h6>
+                    <h4 id = "time">
+                        {{update.event_post_date}}
+                    </h4>
+
+            </div>
+
+        {% endfor %}
+    </div>
+    <div class="col-6-md col-6-sm col-6-lg child2">
+        {% for online in online_users %}
+
+                <p>
+                    <small id = "online">
+                        {{online}} is Online
+                    </small>
+                </p>
+
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %} {% endblock %}

@@ -1,0 +1,45 @@
+.row
+{
+    display: flex;
+}
+
+.columnx
+{
+    flex: 1;
+}
+
+#project_name
+{
+    color: red;
+    font-size: 20px;
+}
+
+#project_owner
+{
+    color: navy;
+}
+
+#uploadtime
+{
+    color: green;
+    text-align: right;
+}
+
+.title1
+{
+    text-align: center;
+}
+
+.pro-desc
+{
+    background-color: #fff;
+    border-radius: 2vw;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#pro-desc
+{
+    color: #000;
+    text-align: center;
+}

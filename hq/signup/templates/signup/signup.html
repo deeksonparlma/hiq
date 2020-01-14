@@ -1,0 +1,90 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta name="theme-color" content="#6a89cc">
+        <meta name="viewport" content="initial-scale=1.0 , maximum-scale=1.0, user-scalable=no">
+        <link rel="icon" href="{% static 'signup/img/icon.jpeg' %}">
+        <link rel="stylesheet" href="{% static 'signup/css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'signup/css/styles.css' %}">
+        <link rel="stylesheet" href="{% static './signup/signup.css' %}">
+        <meta charset="utf-8">
+        <title>HiQ | Signup</title>
+    </head>
+    <body>
+        <form class="" action="{% url 'signup:signup' %}" method="post">
+            {% csrf_token %}
+
+            <div class=""><br>
+              <table>
+
+                  <tr>
+                    <td>
+                        <label for="">First Name</label>
+                    </td>
+
+                    <td>
+                        <input type="text" class="form-control" placeholder="First Name" name="fname">
+                    </td>
+
+                  </tr>
+                  <tr>
+                      <td>
+                          <label for="">Second name</label>
+                      </td>
+                      <td>
+                          <input type="text" class="form-control" placeholder="Second Name" name="sname">
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <label for="">Password</label>
+                      </td>
+                      <td>
+                         <input type="password" class="form-control" placeholder="Password" name="password">
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
+                          <label for="">Confirm password</label>
+                      </td>
+                      <td>
+                          <input type="password" class="form-control" placeholder="Confirm password" name="cpassword">
+                      </td>
+                  </tr>
+                 <tr>
+                     <td>
+                         <label for="">Email</label>
+                     </td>
+                     <td>
+                         <input type="email" class="form-control" placeholder="email" name="email">
+                     </td>
+                 </tr>
+                  <tr>
+                      <td>
+                          <label for="">Phone Number</label>
+                      </td>
+                      <td>
+                          <input type="text" class="form-control" placeholder="Phone Number" name="pnumber">
+                      </td>
+
+                  </tr>
+
+                  <td>
+                      <label for="profile">Profile Photo</label>
+                  </td>
+
+                  <td>
+                      <input type="file" class="form-control" id="profile" name="profile">
+                  </td>
+              </tr>
+
+              </table>
+              <br>
+              <button type="submit" class="btn btn-info lg" name="button">Sign Up</button> <span class="Front"> or  <a href="{% url 'login:login' %}">Login</a> </span>
+            </div>
+
+        </form>
+    </body>
+</html>

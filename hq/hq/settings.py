@@ -25,7 +25,7 @@ SECRET_KEY = 'kt_*yi1px_k5%z^)#5kn&0ste+are41_rl_eia6o&y+nu9d*=w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -37,6 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'login',
+    'events',
+    'developers',
+    'uprofile',
+    'home',
+    'signup',
+    'upload_pro',
+    'logout',
+    'gallery',
+    'Feeds',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +64,17 @@ ROOT_URLCONF = 'hq.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+                os.path.join(BASE_DIR , "login/templates/login"),
+                os.path.join(BASE_DIR , "signup/templates/signup"),
+                os.path.join(BASE_DIR , "events/templates/events"),
+                os.path.join(BASE_DIR , "uprofile/templates/uprofile"),
+                os.path.join(BASE_DIR , "developers/templates/developers"),
+                os.path.join(BASE_DIR , "upload_pro/templates/upload_pro"),
+                os.path.join(BASE_DIR , "logout/template/logout"),
+                os.path.join(BASE_DIR , "gallery/template/gallery"),
+                os.path.join(BASE_DIR , "Feeds/template/Feeds"),
+                ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,8 +95,11 @@ WSGI_APPLICATION = 'hq.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':'hq_testdb',
+        'HOST':'127.0.0.1',
+        'USER':'root',
+        'PASSWORD':'xcmbyzwvy'
     }
 }
 
@@ -105,8 +128,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
-
+# TIME_ZONE = "UTC"
+TIME_ZONE = 'Africa/Nairobi'
 USE_I18N = True
 
 USE_L10N = True
@@ -118,3 +141,24 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR , "static_root/")
+
+STATICFILES_DIRS = [
+os.path.join(BASE_DIR , "signup/static/"),
+os.path.join(BASE_DIR , "events/static/"),
+os.path.join(BASE_DIR , "uprofile/static/"),
+os.path.join(BASE_DIR , "developers/static/"),
+os.path.join(BASE_DIR , "upload_pro/static/"),
+os.path.join(BASE_DIR , "logout/static/"),
+os.path.join(BASE_DIR , "login/static/"),
+os.path.join(BASE_DIR , "gallery/static/"),
+os.path.join(BASE_DIR , "Feeds/static/"),
+]
+
+
+
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR , "media_root")
+# MEDIA_ROOT = os.path.join(BASE_DIR , "media_root/")
+print(MEDIA_ROOT)
