@@ -7,6 +7,7 @@ def login(request):
     form = loginfrm()
     error_var = ""
     sess = ""
+    alredylog=""
 
     if request.method == 'POST':
         try:
@@ -17,27 +18,33 @@ def login(request):
             error_var = "no user with name exists"
 
         else:
+
             if logstats.Password == request.POST["password"]:
 
-                request.session["username"] = logstats.First_Name
+                if logstats.logstatus:
+                    alredylog = r"This account is already logged in, Please try again....✋✊"
 
-                logstats.logstatus = True
-                logstats.save()
-                # print()
+                else:
+                    request.session["username"] = logstats.First_Name
 
-                # request.session["email"] = signup_user.objects.get(Email = request.POST['email'])
+                    logstats.logstatus = True
+                    logstats.save()
+                    # print()
+
+                    # request.session["email"] = signup_user.objects.get(Email = request.POST['email'])
 
 
-                # set the username of the currrent user
-                sess = request.session["username"]
-                # set the session variable email address
-                request.session["email"] = request.POST['email']
+                    # set the username of the currrent user
+                    sess = request.session["username"]
+                    # set the session variable email address
+                    request.session["email"] = request.POST['email']
 
-                # Expires immediately th user exits the browser
-                request.session.set_expiry(0)
+                    # Expires immediately th user exits the browser
+                    request.session.set_expiry(0)
 
-                # redirect users to their profile page
-                return redirect("profile/")
+                    # redirect users to their profile page
+                    return redirect("profile/")
+
             else:
                 error_var = "Wrong password"
     else:
@@ -45,4 +52,4 @@ def login(request):
 
 
 
-    return render (request , "./login/login.html" , context = {"form": form , "error":error_var ,"sess":sess})
+    return render (request , "./login/login.html" , context = {"form": form , "error":error_var ,"sess":sess , "alredy":alredylog})

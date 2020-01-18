@@ -87,3 +87,21 @@ ul
 {
     color: #0f0;
 }
+
+.container
+{
+    display: flex;
+}
+
+.navbar
+{
+    flex: 1;
+}
+
+
+
+.container>div
+{
+    flex: 1;
+    display: inline-block;
+}

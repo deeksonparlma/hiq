@@ -1,6 +1,8 @@
 from django.shortcuts import render,redirect
 from upload_pro.models import project
 from signup.models import signup_user
+
+from django.http import HttpResponse
 # Create your views here.
 
 
@@ -8,8 +10,8 @@ def profile_viewer(request):
     # print(request.sesssion.has_key("username"))
     uname = ""
     try:
-        uname = request.session["email"]
-        print(signup_user.objects.get(Email = request.session["email"]).profilepic)
+        uname = request.session["email"].split("@")[0]
+        usern = request.session["username"]
 
     except:
 
@@ -18,7 +20,9 @@ def profile_viewer(request):
 
     else:
         userinfo = signup_user.objects.get(Email = request.session["email"])
-        return render(request , "./uprofile/profile.html" , context = {"projects":project.objects.filter(projectowner = uname) ,"userinfo":userinfo , "profile": signup_user.objects.get(Email = request.session["email"]).profilepic, "username":uname})
+
+        return render(request , "./uprofile/profile.html" , context = {"projects":project.objects.filter(uid = userinfo.uid) ,
+        "userinfo":userinfo , "profile": signup_user.objects.get(Email = request.session["email"]).profilepic, "email":uname , "username":usern})
 
 
 
@@ -27,18 +31,58 @@ def update(request):
         fname = request.POST["fname"]
         lname = request.POST["lname"]
         mail = request.POST["email"]
+
         phone = request.POST["pnumber"]
 
-        uobject = signup_user.objects.get(Email = request.POST["email"])
+        uobject = signup_user.objects.get(Email = request.session["email"])
         uobject.First_Name = fname
-        uobject.Second_Name = lname
+        uobject.Second_name = lname
         uobject.Email = mail
         uobject.Phone_Number = phone
-        request.session["username"] = uobject.First_Name
+
+        try:
+            request.POST["password"][0]
+
+        except Exception as e:
+            pass
+
+        else:
+            uobject.Password = request.POST["password"]
+
+        request.session["email"] = mail
+        request.session["username"] = fname
+        # uobject.First_Name
         uobject.save()
 
     return redirect("/profile/")
 
 
-def project_viewer(request):
-    pass
+
+def view_collequeprof(request , collequename):
+    errorlog = ""
+    collequedetails = ""
+
+    try:
+        projects = project.objects.filter(projectowner = collequename)
+    except:
+        errorlog = "{} has no projects".format(collequename)
+
+    else:
+        try:
+            collequedetails = signup_user.objects.get(Email = collequename)
+        except:
+            pass
+        print("{}\n\n\n\n\n".format(errorlog))
+
+
+
+    return render(request ,  "./uprofile/colleque.html" , context = {"projects":projects , "owner":collequename , "collequedetails":collequedetails})
+    # return HttpResponse("Viewing {}\'s project(s)".format(collequename))
+
+
+
+
+
+
+def serchpro(request):
+    return HttpResponse("Gotcha")

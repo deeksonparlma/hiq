@@ -7,5 +7,5 @@ app_name ="gallery"
 
 urlpatterns = [
     url("^$" , views.photos , name = "view_photo"),
-    url("gallery_upload/" , views.uploadphotos , name = "upload_photo"),
+    url("galleryup/" , views.uploadphotos , name = "upload_photo"),
 ]

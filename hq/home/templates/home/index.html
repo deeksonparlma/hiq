@@ -19,33 +19,41 @@
         <img src="{% static 'home/img/hamburger.jpg' %}" class="logo" alt="">
       </div>
 
-        <div class="navbar options">
-             <a href="{% url 'home:home' %}">Home</a>
-        </div>
+        <!-- <div class="navbar options">
+             <a href="{% url 'home:home' %}" class="btn btn-warning">Home</a>
+        </div> -->
 
-      <div class="navbar options">
-        <a href="{% url 'events:events' %}">Events</a>
-      </div>
+      <!-- <div class="navbar options">
+        <a href="{% url 'events:events' %}" class="btn btn-warning">Events</a>
+      </div> -->
 
 
       <!-- <div class="navbar options"> -->
         <!-- <a href="#">Projects</a> -->
       <!-- </div> -->
       <div class="navbar options">
-        <a href="{% url 'developers:contact' %}">Contact</a>
+        <a href="{% url 'developers:contact' %}" class="btn btn-warning">Contact</a>
       </div>
 
       <div class="navbar options">
-        <a href="{% url 'profile:profile' %}">Profile</a>
+        <a href="{% url 'profile:profile' %}" class="btn btn-warning">Profile</a>
       </div>
 
       <div class="navbar options">
-        <a href="{% url 'Feeds:Feeds' %}">Feeds</a>
+        <a href="{% url 'Feeds:Feeds' %}" class="btn btn-warning">Feeds</a>
       </div>
 
       <div class="navbar options">
-          <a href="{% url 'login:login' %}"><button type="button" id="showForm"  class="btn btn-success topbtn" name="button">Log in</button></a>
+          <a href="{% url 'gallery:view_photo' %}" class="btn btn-warning">Gallery</a>
       </div>
+
+      {% if loginshow %}
+
+        {% else %}
+            <div class="navbar options">
+                <a href="{% url 'login:login' %}"><button type="button" id="showForm"  class="btn btn-success topbtn" name="button">Log in</button></a>
+            </div>
+        {% endif %}
       <!-- <div class="navbar options">
           <button type="button" id="showForm" class="btn btn-info topbtn" name="button">Sign Up</button>
       </div> -->

@@ -1,10 +1,8 @@
 {% extends './base.html' %}
 
 {% load static %}
-<link rel="stylesheet" href="{% static './Feeds/css/bootstrap.css' %}">
 
 {% block css%}{% static './Feeds/feeds.css' %}{% endblock %}
-<link rel="stylesheet" href="{% static './Feeds/styles.css' %}">
 
 {% block title %} HiQ | Feeds {% endblock %}
 
@@ -12,23 +10,28 @@
 {% block header %}
     <h1 >Latest Feeds in HiQ | Feeds </h1>
 
-    <div class="nav-bar">
+    <div class="nav-bar container">
         <div class="navbar first options">
-            <a href="{% url 'home:home' %}">Home</a>
+            <a href="{% url 'home:home' %}" class="btn btn-warning">Home</a>
         </div>
         <div class="navbar options">
-            <a href="{% url 'events:events' %}">Events</a>
+            <a href="{% url 'events:events' %}" class="btn btn-warning">Events</a>
         </div>
             <!-- <div class="navbar options"> -->
               <!-- <a href="#">Projects</a> -->
             <!-- </div> -->
         <div class="navbar options">
-            <a href="{% url 'developers:contact' %}">Contact</a>
+            <a href="{% url 'developers:contact' %}" class="btn btn-warning">Contact</a>
         </div>
 
         <div class="navbar options">
-            <a href="{% url 'profile:profile' %}">Profile</a>
+            <a href="{% url 'profile:profile' %}" class="btn btn-warning">Profile</a>
         </div>
+
+        <div class="navbar options">
+            <a href="{% url 'gallery:view_photo' %}" class="btn btn-warning">Gallery</a>
+        </div>
+
 
     </div>
 
@@ -37,15 +40,14 @@
 {% block content %}
 <div class="row">
 
-    <div class="col-6-md col-6-sm col-6-lg child1">
+    <div class="col-sm-8 col-md-8 col-lg-8 child1">
 
         {% for update in updates %}
 
             <div class="singular">
-
                     <ul>
 
-                        {{update.event_organizer}}
+                        <a href="{% url 'profile:view_collequeprof' update.event_organizer %}" title="View {{update.event_organizer}}'s Project (s)">{{update.event_organizer}}</a>
 
                     </ul>
                     <h6 id = "desc">
@@ -59,9 +61,8 @@
 
         {% endfor %}
     </div>
-    <div class="col-6-md col-6-sm col-6-lg child2">
+    <div class="col-sm-4 col-md-4 col-lg-4 child2">
         {% for online in online_users %}
-
                 <p>
                     <small id = "online">
                         {{online}} is Online
