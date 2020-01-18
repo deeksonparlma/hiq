@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0 ,user-scalable=no,maximum-scale =1.0">
         <link rel="stylesheet" href="{% static './upload_pro/upload.css' %}">
         <link rel="stylesheet" href="{% static './upload_pro/css/bootstrap.css' %}">
-        <link rel="stylesheet" href="{% static './upload_pro/css/styles.css' %}">
+        <!-- <link rel="stylesheet" href="{% static './upload_pro/css/styles.css' %}"> -->
 
         <title></title>
     </head>
@@ -48,13 +48,39 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-6-md">
+
+                <div class="col-md-6">
                     '{{pro_del}}' Was deleted
                 </div>
-                <div class="col-6-md">
-                    Nothign to show
+
+                <div class="col-md-6">
+                        <h1>Other Projects</h1>
+                        {% for x in otherpros %}
+
+                            <div class="display-pro">
+                                <p id="projectname">
+                                    {{x.project_name}}
+                                </p>
+
+                                <p id="projectcontent">
+                                    {{x.project_description}}
+
+                                        <small id="projectdate">
+                                            <a href="{% url 'upload:delete_project' x.project_name %}" title="Delete '{{x.project_name}}' project?" class="btn btn-danger">Delete Project</a>
+                                        </small>
+                                    <small id="projectdate">
+                                        {{x.uploadtime}}
+
+                                    </small>
+                                </p>
+
+                            </div>
+
+                        {% endfor %}
                 </div>
+
             </div>
+
         </div>
 
     </body>

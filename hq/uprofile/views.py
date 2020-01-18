@@ -7,11 +7,9 @@ from django.http import HttpResponse
 
 
 def profile_viewer(request):
-    # print(request.sesssion.has_key("username"))
     uname = ""
     try:
-        uname = request.session["email"].split("@")[0]
-        usern = request.session["username"]
+        statusdecision = signup_user.objects.get(Email = request.session["email"]).logstatus
 
     except:
 
@@ -19,11 +17,19 @@ def profile_viewer(request):
         return redirect("/login/")
 
     else:
-        userinfo = signup_user.objects.get(Email = request.session["email"])
+        if not statusdecision:
+            uname = "You are not yet logged in."
+            print(statusdecision)
+            return redirect("/login/")
 
-        return render(request , "./uprofile/profile.html" , context = {"projects":project.objects.filter(uid = userinfo.uid) ,
-        "userinfo":userinfo , "profile": signup_user.objects.get(Email = request.session["email"]).profilepic, "email":uname , "username":usern})
+        else:
+            uname = request.session["email"].split("@")[0]
+            usern = request.session["username"]
 
+            userinfo = signup_user.objects.get(Email = request.session["email"])
+
+            return render(request , "./uprofile/profile.html" , context = {"projects":project.objects.filter(uid = userinfo.uid) ,
+            "userinfo":userinfo , "profile": signup_user.objects.get(Email = request.session["email"]).profilepic, "email":uname , "username":usern})
 
 
 def update(request):
@@ -63,20 +69,20 @@ def view_collequeprof(request , collequename):
     collequedetails = ""
 
     try:
-        projects = project.objects.filter(projectowner = collequename)
+        projects = project.objects.filter(uid_id = signup_user.objects.get(Email = collequename).uid)
+        # print(projects[0])
+
     except:
         errorlog = "{} has no projects".format(collequename)
 
     else:
         try:
             collequedetails = signup_user.objects.get(Email = collequename)
+
         except:
             pass
-        print("{}\n\n\n\n\n".format(errorlog))
 
-
-
-    return render(request ,  "./uprofile/colleque.html" , context = {"projects":projects , "owner":collequename , "collequedetails":collequedetails})
+    return render(request ,  "./uprofile/colleque.html" , context = {"projects":projects ,"error":errorlog, "owner":collequename , "collequedetails":collequedetails})
     # return HttpResponse("Viewing {}\'s project(s)".format(collequename))
 
 

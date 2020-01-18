@@ -10,7 +10,6 @@ h1
 {
     text-align: center;
     font-size: 60px;
-    /* text-decoration: underline-through; */
     text-shadow: 4px 4px 4px #0f0;
     animation: rot .9s ease-in 1;
     opacity: .9;

@@ -1,4 +1,58 @@
+*
+{
+    background-image: url('../');
+}
 body
 {
-    background-color: #f0f;
+    background-color: #f00;
+}
+
+.divide
+{
+    background-color: #123;
+    margin: 4vw;
+    padding: 1vw;
+}
+
+h1
+{
+    box-sizing: border-box;
+    font-size: 40px;
+    text-align: center;
+    background-image: linear-gradient(to left,navy,blue);
+    text-decoration: underline;
+    padding: 3vh;
+    color: #fff;
+    text-shadow: 3px -3px 3px #fff;
+}
+
+
+table
+{
+    background-color: #123;
+    color: #fff;
+}
+
+
+th
+{
+    font-size: 20px;
+    background-color: #456;
+    text-align: center;
+}
+.main-navbar
+{
+    display: flex;
+}
+
+
+.btn
+{
+    flex:1;
+}
+
+
+.display-pro
+{
+    border-radius: 40vw;
 }

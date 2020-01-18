@@ -19,9 +19,12 @@ def events(request):
 
     return render(request , "./events/events.html" , context = {"events":event_var, "username":sess})
 
+
+
 def add_event(request):
     errorlog = ""
     if request.method=='POST':
+
         try:
             uname = request.session["email"]
 
@@ -29,13 +32,12 @@ def add_event(request):
             errorlog = "Please login to continue"
             uname = "Anornymous"
             return render(request , "./events/addevents.html" , context = {"events":eventfrm,"errorlog":errorlog})
+
         else:
-
-            n = signup_user.objects.get(Email = request.session["email"]).uid
-
-            events_list.objects.create(event_organizer = 1, event_description = request.POST["event_description"])
+            events_list.objects.create(event_organizer_id = signup_user.objects.get(Email = request.session["email"]).uid, event_description = request.POST["event_description"])
 
             return redirect("/events/")
 
     else:
+
         return render(request , "./events/addevents.html" , context = {"events":eventfrm})

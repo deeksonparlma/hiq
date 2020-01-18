@@ -11,8 +11,17 @@
     <link rel="stylesheet" href="{% static 'uprofile/base.css' %}">
     <meta charset="utf-8">
     <title>HiQ | Profile</title>
+    <script type="text/javascript">
+
+        function error()
+        {
+            alert(document.getElementById("error").value)
+        }
+
+    </script>
   </head>
-  <body class="user">
+  <body class="user" onload="error()">
+      <input type="hidden" name="error" value="{{error}}" id="error">
     <div class="nav">
       <div class="navbar car">
         <img src="{% static 'uprofile/img/career.svg' %}" class="logo" alt="">
@@ -56,17 +65,15 @@
       </div>
       <br>
 
-
-
-      <form class="userInfo" action="{% url 'profile:update' %}" method="post">
-          {% csrf_token %}
          <table>
              <tr>
                  <td>
                      <label for="fname">First Name </label>
                 </td>
                 <td>
-                     <input type="text" id="fname" name="fname" value="{{collequedetails.First_Name}}" contenteditable="true">
+                     <label id="fname" >
+                         {{collequedetails.First_Name}}
+                     </label>
                      <br>
                      <hr size=4 color= "red" >
                 </td>
@@ -78,7 +85,9 @@
                          <label for="sname">Second Name </label>
                     </td>
                     <td>
-                         <input type="text" id="sname" name="lname" value="{{collequedetails.Second_name}}" contenteditable="true">
+                         <label id="sname" >
+                             {{collequedetails.Second_name}}
+                         </label>
                          <br>
                          <hr size=4 color= "red" >
                     </td>
@@ -90,7 +99,9 @@
                      <label for="email">Email address </label>
                 </td>
                 <td>
-                     <input type="email" id="email" name="email" value="{{collequedetails.Email}}" contenteditable="true">
+                     <label id="email" >
+                         {{collequedetails.Email}}
+                     </label>
                      <br>
                      <hr size=4 color= "red">
                 </td>
@@ -101,27 +112,14 @@
                      <label for="phone">Phone</label>
                 </td>
                 <td>
-                     <input type="text" id="phone" name="pnumber" value="{{collequedetails.Phone_Number}}" contenteditable="true">
+                     <label id="phone">
+                        {{collequedetails.Phone_Number}}
+                     </label>
                      <br>
                      <hr size=4 color= "red" >
                 </td>
              </tr>
-
-             <tr>
-                 <td>
-                     <label for="password">Password</label>
-                </td>
-                <td>
-                     <input type="password" id="password" name="password" placeholder="Enter new password" value="" contenteditable="true">
-                     <br>
-                     <hr size=4 color= "red" >
-                </td>
-             </tr>
-
          </table>
-         <input type="submit" name="submit" value="Update" id="submitupdate" class="btn btn-info">
-      </form>
-
 
 
 

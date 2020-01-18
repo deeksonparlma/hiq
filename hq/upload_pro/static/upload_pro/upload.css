@@ -50,3 +50,55 @@ th
 {
     flex:1;
 }
+
+
+.display-pro
+{
+    box-sizing: border-box;
+    border-radius: 1.5vw;
+    padding: 1.5vw;
+    margin:1.5vw auto;
+    background-color: #095;
+}
+
+
+.display-pro>p
+{
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    margin:1vw auto;
+
+}
+
+
+#projectname
+{
+    background-color: #000;
+    font-size: 30px;
+    display: block;
+    border-radius: 2vw;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#projectcontent
+{
+    box-sizing: border-box;
+    background-color: #000;
+    font-size: 20px;
+    display: block;
+    text-align: left;
+    padding: 6px;
+}
+
+
+#projectdate
+{
+    box-sizing: border-box;
+    background-color: inherit;
+    font-size: 20px;
+    display: block;
+    text-align: right;
+    padding: 6px;
+}
