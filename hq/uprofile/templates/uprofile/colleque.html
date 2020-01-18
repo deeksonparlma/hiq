@@ -122,9 +122,9 @@
         USER INFO FROM THE DATABASE
 
        -->
-      <a href="{% url 'upload:upload' %}"><button type="button" class="btn btn-info upload" name="button">Upload Project</button></a>
-      <br>
-      <a href="{% url 'logout:logout' %}"><button type="button" class="btn btn-danger logout" name="button">Log Out</button></a>
+      <!-- <a href="{% url 'upload:upload' %}"><button type="button" class="btn btn-info upload" name="button">Upload Project</button></a> -->
+      <!-- <br> -->
+      <!-- <a href="{% url 'logout:logout' %}"><button type="button" class="btn btn-danger logout" name="button">Log Out</button></a> -->
       <!-- <a href="{% url 'profile:update' %}">
           <button type="button" class="btn btn-success updateinfo" name="button">Update info</button>
       </a> -->
@@ -152,7 +152,7 @@
                                    <h3>{{proj.projectowner}}</h3>
                                </p> -->
                                <p id="pro-desc">{{proj.project_description}}</p>
-                               <p id="delete"><a href="{% url 'upload:delete_project' proj.project_name %}" class="btn btn-danger">Delete Project</a> </p>
+                               <!-- <p id="delete"><a href="{% url 'upload:delete_project' proj.project_name %}" class="btn btn-danger">Delete Project</a> </p> -->
                                <p id="uploadtime">
                                    Created on {{proj.uploadtime}}
                                </p>
