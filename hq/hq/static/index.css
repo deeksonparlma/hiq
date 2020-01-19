@@ -1,6 +1,6 @@
 *
 {
-    background-image: url('./toons.jpg');
+    background-image: url('./images/bush.jpg');
     background-repeat: no-repeat;
     background-size:cover;
     background-blend-mode: color-dodge;
@@ -10,10 +10,12 @@ h1
 {
     text-align: center;
     font-size: 60px;
-    text-shadow: 4px 4px 4px #0f0;
+    text-shadow: 5px -5px 6px #fff;
     animation: rot .9s ease-in 1;
     opacity: .9;
-    color: #fff;
+    color: #0f0;
+    background-color: #000;
+    text-decoration: underline;
 }
 /*
 @keyframes rot {
