@@ -73,6 +73,8 @@
     padding: 20px;
     box-sizing: border-box;
 }
+
+
 #delete
 {
     font-size: 1.1em;
@@ -80,6 +82,7 @@
     position: relative;
     background-color:inherit;
     left: 5px;
+    /* display: none; */
 }
 
 
@@ -127,15 +130,18 @@ input
     text-decoration: underline;
 
 }
+
 .writeinfo
 {
     display: inline-block;
 
 }
+
 .writeinfo>.profName
 {
     animation: bouncy 2s 1;
 }
+
 @keyframes  bouncy {
     0%
     {

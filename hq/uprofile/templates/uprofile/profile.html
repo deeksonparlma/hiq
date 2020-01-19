@@ -162,8 +162,16 @@
                                <!-- <p id="project_owner">
                                    <h3>{{proj.projectowner}}</h3>
                                </p> -->
-                               <p id="pro-desc">{{proj.project_description}}</p>
-                               <p id="delete"><a href="{% url 'upload:delete_project' proj.project_name %}" title="Delete '{{proj.project_name}}' project?" class="btn btn-danger">Delete Project</a> </p>
+                               <p id="pro-desc">
+                                   {{proj.project_description}}
+                               </p>
+
+                               <p id="delete">
+                                   <a href="{% url 'upload:delete_project' proj.project_name %}" title="Delete '{{proj.project_name}}' project?" class="btn btn-danger">
+                                       Delete Project
+                                   </a>
+                               </p>
+
                                <p id="uploadtime">
                                    Created on {{proj.uploadtime}}
                                </p>

@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from .forms import galform
 
 from .models import HiQGallery
+from signup.models import signup_user
 
 def photos(request):
     hqgallery = HiQGallery.objects.order_by("id")
@@ -11,10 +12,22 @@ def photos(request):
     return render(request , "./gallery/photos.html" , context = {"gallery":hqgallery})
 
 
+
+
 def uploadphotos(request):
     if request.method == "POST":
-        HiQGallery.objects.create(uid_id = 1 ,image = request.FILES["image"])
-        return redirect("/gallery")
+        try:
+            HiQGallery.objects.create(uid_id = signup_user.objects.get(Email = request.session["email"]).uid ,
+            image = request.FILES["image"])
+
+            return redirect("/gallery")
+
+        except KeyError as e:
+            return redirect("/login/")
+
+        else:
+            pass
+
     else:
         pass
 

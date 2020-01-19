@@ -8,8 +8,14 @@ from signup.models import signup_user
 
 
 def projects(request):
-    pro = project.objects.filter(uid = signup_user.objects.get(Email = request.session["email"])).order_by("uploadtime")
-    return render(request , "./upload_pro/projects.html" , context = {"yourprojects":pro})
+    try:
+        pro = project.objects.filter(uid = signup_user.objects.get(Email = request.session["email"])).order_by("uploadtime")
+    except:
+        errorlog = "Login First"
+        return redirect("/login")
+    else:
+
+        return render(request , "./upload_pro/projects.html" , context = {"yourprojects":pro})
 
 
 
