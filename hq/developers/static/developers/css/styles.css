@@ -30,7 +30,7 @@ p{
     opacity: 1;
   }
   .ham{
-    display: block;
+    display: none;
   }
   .navbar{
 
@@ -203,7 +203,7 @@ p{
     bottom: 0;
     left: 0;
     right: 0;
-    display: block;
+    display: none;
   }
   .login{
     background-image: linear-gradient(125deg,#b8e974,#6a89cc);
@@ -221,7 +221,7 @@ p{
     bottom: 0;
     left: 0;
     right: 0;
-    display: block;
+    display: none;
     background-color: rgba(0, 0, 0, 0.9);
     filter: blur(2px);
   }
@@ -249,7 +249,7 @@ p{
     bottom: 0;
     right: 20%;
     left: 30%;
-    display: block;
+    display: none;
 
   }
   .user{

@@ -21,7 +21,7 @@
       <div class="navbar ham">
         <img src="{% static 'uprofile/img/hamburger.jpg' %}" class="logo" alt="">
       </div>
-      <div class="navbar first options">
+      <div class="navbar options">
         <a href="{% url 'home:home' %}" class="btn btn-success">Home</a>
       </div>
       <div class="navbar options">
@@ -137,7 +137,7 @@
 
              <div class="row">
 
-                <div class="col-4-md col-4-sm col-4-lg columnx">
+                <div class="col-12-md col-12-sm col-12-lg columnx">
                      <h2 class="title1">{{owner}} Project(s)</h2>
                      {%for proj in projects %}
                         <div class="cont">
@@ -178,14 +178,14 @@
 
                 </div> -->
 
-                <div class="col-4-md col-4-sm col-4-lg columnx">
+                <!-- <div class="col-4-md col-4-sm col-4-lg columnx">
                     <form class="" action="{% url 'profile:serchpro' %}" method="post">
                         {% csrf_token %}
                         <label for="">Serach</label>
                         <input type="text" name="search" placeholder="Search projects">
                         <input type="submit" name="submit" value="submit">
                     </form>
-                </div>
+                </div> -->
         </div>
 
     </span>

@@ -21,6 +21,7 @@ def projects(request):
 
 def delete_project(request , deletedp = "Nothing altered .... "):
     otherprojects = ""
+    uname = ""
 
     try:
         # print(deletedp)
@@ -35,9 +36,15 @@ def delete_project(request , deletedp = "Nothing altered .... "):
         otherprojects = project.objects.filter(uid = signup_user.objects.get(Email = request.session["email"])).order_by("uploadtime")
         # otherprojects = project.objects.filter(uid_id.uid = 5)
         # print(otherprojects)
-        pass
+        uname = request.session["email"].split("@")[0]
+        usern = request.session["username"]
 
-    return render(request , "./upload_pro/deletep.html" , context = {"pro_del":deletedp,"otherpros":otherprojects})
+        userinfo = signup_user.objects.get(Email = request.session["email"])
+
+    return render(request , "./uprofile/profile.html" , context = {"projects":project.objects.filter(uid = userinfo.uid) ,
+    "userinfo":userinfo , "profile": signup_user.objects.get(Email = request.session["email"]).profilepic, "email":uname , "username":usern})
+
+    # return render(request , "./uprofile/profile.html" , context = {"pro_del":deletedp,"otherpros":otherprojects})
 
 
 

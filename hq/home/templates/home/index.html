@@ -32,19 +32,19 @@
         <!-- <a href="#">Projects</a> -->
       <!-- </div> -->
       <div class="navbar options">
-        <a href="{% url 'developers:contact' %}" class="btn btn-warning">Contact</a>
+        <a href="{% url 'developers:contact' %}" ><button class="btn btn-warning" > Contact</button></a>
       </div>
 
       <div class="navbar options">
-        <a href="{% url 'profile:profile' %}" class="btn btn-warning">Profile</a>
+        <a href="{% url 'profile:profile' %}"><button class="btn btn-warning"> Profile</button></a>
       </div>
 
       <div class="navbar options">
-        <a href="{% url 'Feeds:Feeds' %}" class="btn btn-warning">Feeds</a>
+        <a href="{% url 'Feeds:Feeds' %}"><button class="btn btn-warning">Feeds</button></a>
       </div>
 
       <div class="navbar options">
-          <a href="{% url 'gallery:view_photo' %}" class="btn btn-warning">Gallery</a>
+          <a href="{% url 'gallery:view_photo' %}"><button class="btn btn-warning"> Gallery</button></a>
       </div>
 
       {% if loginshow %}

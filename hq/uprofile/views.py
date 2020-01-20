@@ -67,24 +67,32 @@ def update(request):
 def view_collequeprof(request , collequename):
     errorlog = ""
     collequedetails = ""
-
+    uname = ""
     try:
-        projects = project.objects.filter(uid_id = signup_user.objects.get(Email = collequename).uid)
-        # print(projects[0])
+        statusdecision = signup_user.objects.get(Email = request.session["email"]).logstatus
 
     except:
-        errorlog = "{} has no projects".format(collequename)
 
+        uname = "You are not yet logged in."
+        return redirect("/login/")
     else:
+
         try:
-            collequedetails = signup_user.objects.get(Email = collequename)
+            projects = project.objects.filter(uid_id = signup_user.objects.get(Email = collequename).uid)
+            # print(projects[0])
 
         except:
-            pass
+            errorlog = "{} has no projects".format(collequename)
 
-    return render(request ,  "./uprofile/colleque.html" , context = {"projects":projects ,"error":errorlog, "owner":collequename , "collequedetails":collequedetails})
-    # return HttpResponse("Viewing {}\'s project(s)".format(collequename))
+        else:
+            try:
+                collequedetails = signup_user.objects.get(Email = collequename)
 
+            except:
+                pass
+
+            return render(request ,  "./uprofile/colleque.html" , context = {"projects":projects ,"error":errorlog, "owner":collequename , "collequedetails":collequedetails})
+            # return HttpResponse("Viewing {}\'s project(s)".format(collequename))
 
 
 

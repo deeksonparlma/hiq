@@ -340,7 +340,7 @@ p{
     font-size: 15px;
   }
   .options{
-    display: inline-block;
+    display: none;
   }
   .navbar>a{
     text-decoration: none;

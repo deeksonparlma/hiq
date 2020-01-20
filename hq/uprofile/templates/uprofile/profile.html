@@ -7,8 +7,8 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <link rel="icon" href="{% static 'uprofile/img/icon.jpeg' %}">
     <link rel="stylesheet" href="{% static 'uprofile/css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'uprofile/css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'uprofile/base.css' %}">
+    <link rel="stylesheet" href="{% static 'uprofile/css/styles.css' %}">
     <meta charset="utf-8">
     <title>HiQ | Profile</title>
   </head>
@@ -20,7 +20,7 @@
       <div class="navbar ham">
         <img src="{% static 'uprofile/img/hamburger.jpg' %}" class="logo" alt="">
       </div>
-      <div class="navbar first options">
+      <div class="navbar  options">
         <a href="{% url 'home:home' %}" class="btn btn-success">Home</a>
       </div>
       <div class="navbar options">
@@ -148,15 +148,16 @@
 
              <div class="row">
 
-                <div class="col-4-md col-4-sm col-4-lg columnx">
+                <div class="col-12-md col-12-sm col-12-lg columnx">
                      <h2 class="title1">Your Projects</h2>
+                     <div class="arrange">
                      {%for proj in projects %}
                         <div class="cont">
 
                             <div class="pro-desc">
 
                                 <p id="project_name">
-                                    <a href="{% url 'upload:projects' %}">{{proj.project_name}}</a>
+                                    {{proj.project_name}}
 
                                 </p>
                                <!-- <p id="project_owner">
@@ -181,6 +182,7 @@
                         </div>
                     <hr style="background-color: navy">
                     {% endfor %}
+                </div>
 
                 </div>
 
@@ -194,16 +196,9 @@
                     <h2 class="title1">Completed</h2>
                     <p class="labels"> Completed</p>
 
-                </div> -->
+                </div>-->
 
-                <div class="col-4-md col-4-sm col-4-lg columnx">
-                    <form class="" action="{% url 'profile:serchpro' %}" method="post">
-                        {% csrf_token %}
-                        <label for="">Serach</label>
-                        <input type="text" name="search" placeholder="Search projects">
-                        <input type="submit" name="submit" value="submit">
-                    </form>
-                </div>
+
         </div>
 
     </span>

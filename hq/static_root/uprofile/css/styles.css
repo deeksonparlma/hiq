@@ -11,6 +11,7 @@ p{
 }
 @media only screen and (min-width:800px){
 
+
   .body{
     background-image: linear-gradient(125deg,#b8e974,#6a89cc);
     height: 430vh;
@@ -32,24 +33,26 @@ p{
   .ham{
     display: none;
   }
-  .navbar{
 
-  }
-  .navbar>a{
-    text-decoration: underline;
+.navbar{
+        font-size: 25px;
+      }
+
+
+.navbar>a{
+    text-decoration: none;
     color: black;
     font-size: 17px;
-    color: #11f;
   }
 
 
-.navbar>a:hover
+/* .navbar>a:hover
 {
     text-decoration: underline;
     font-size: 1.5em;
     text-shadow: 1px 1px 1px #111;
     cursor:cell;
-}
+} */
 
   .topbtn{
     height: 30px;
@@ -253,21 +256,23 @@ p{
 
   }
   .user{
-    height: 1000vh;
     background-image: linear-gradient(125deg,#b8e974,#6a89cc);
+    background-size: cover;
   }
   .userInfo{
     position: fixed;
     height: 100vh;
-    width: 30%;
+    width: 35%;
     background-image: linear-gradient(125deg,#b8e974,#6a89cc);
   }
   .projectList{
-    height: 100vh;
+    height: auto;
     width: 65%;
     position: absolute;
     top: 0;
     left: 35%;
+    background-image: linear-gradient(125deg,#b8e974,#6a89cc);
+    background-size: cover;
     /* background-color: blue; */
   }
   .imgDp{
@@ -299,7 +304,6 @@ p{
     display: flex;
   }
   .static{
-    position: fixed;
     width: 80%;
   }
   .logout{
@@ -310,6 +314,10 @@ p{
     position: absolute;
     bottom: 0;
     right: 0;
+  }
+  .arrange{
+      display: flex;
+      flex-direction: column;
   }
 }
 
@@ -339,6 +347,7 @@ p{
   .navbar{
     font-size: 15px;
   }
+
   .options{
     display: none;
   }
@@ -565,7 +574,7 @@ p{
     display: none;
   }
   .projectList{
-    height: 100vh;
+    height: auto;
     width: 100%;
     position: absolute;
     top: 0;

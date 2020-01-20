@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'logout',
     'gallery',
     'Feeds',
+    'comments',
 ]
 
 MIDDLEWARE = [
