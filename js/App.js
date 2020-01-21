@@ -38,4 +38,12 @@ $(document).ready(function(){
             $(".nav").css("opacity", "1");
           }
 })
+$(window).scroll(function(){
+  if ($(document).scrollTop() > 50) {
+          $(".add-feed-section").slideUp();
+        } else {
+          $(".add-feed-section").slideDown();
+        }
+})
+
 });
