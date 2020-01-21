@@ -599,4 +599,31 @@ p{
   .label{
     display: flex;
   }
+  .posts{
+    padding-top: 56px;
+  }
+  .add-feed-section{
+    display: inline;
+    height: 50px;
+  }
+  .text-feed{
+    color:grey;
+    opacity: 0.6;
+    width: 70%;
+    border-radius: 15px 15px 15px 15px;
+    margin-left: 1%;
+    padding-left: 8px;
+  }
+  .text-feed:focus{
+    color:black;
+    opacity: 1;
+  }
+  .post-btn{
+    position: absolute;
+    top: 80px;
+    right: 10%;
+    height: 40px;
+    width: 50px;
+    font-size: 15px;
+  }
 }
