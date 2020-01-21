@@ -13,7 +13,7 @@ p{
 
   .body{
     background-image: linear-gradient(125deg,#b8e974,#6a89cc);
-    height: 430vh;
+    min-height: 100vh;
   }
   .logo{
     height: 50px;
@@ -299,13 +299,94 @@ p{
     bottom: 0;
     right: 0;
   }
+  .label{
+    display: flex;
+  }
+  .posts{
+    padding-top: 60px;
+  }
+  .add-feed-section{
+    display: inline;
+    height: 50px;
+  }
+  .text-feed{
+    color:grey;
+    opacity: 0.6;
+    width: 85%;
+    border-radius: 15px 15px 15px 15px;
+    margin-left: 1%;
+    padding-left: 8px;
+  }
+  .text-feed:focus{
+    color:black;
+    opacity: 1;
+  }
+  .post-btn{
+    position: absolute;
+    top: 70px;
+    right: 2%;
+    height: 70px;
+    width: 100px;
+    font-size: 15px;
+  }
+  .feed{
+    box-sizing: border-box;
+    margin: 4px 5% 50px 5%;
+    width: 90%;
+    background-color: #2345;
+    min-height: 200px;
+    border-radius: 5px 5px 0px 0px;
+    height: auto;
+
+  }
+  .profile{
+    height:90px;
+    width: 90px;
+    border-radius: 100px;
+    margin: 5px 1px 1px 4px;
+  }
+  .name{
+    margin:  10px 100px 10px 40px;
+    font-size: 18px;
+  }
+  .usr{
+    padding-top: 20px;
+  }
+  .feed-text{
+    padding: 4px 4px 0px 4px;
+    margin-bottom: 40px;
+    font-size: 17px;
+  }
+  .comment-section{
+    background-color: #2345;
+    position: absolute;
+    margin: 0px 0% 0px 0%;
+    width: 90%;
+    border-radius: 0px 0px 5px 5px;
+  }
+  .com{
+    margin-left: 10px;
+    color: white
+  }
+  .count{
+    margin-left: 20px;
+  }
+  .row{
+    box-sizing: border-box;
+    width: 90%;
+  }
+  .time{
+    margin-left: auto;
+    margin-right: 10px;
+    font-size: 12px;
+  }
 }
 
 
 @media only screen and (max-width:800px){
   .body{
     background-image: linear-gradient(125deg,#b8e974,#6a89cc);
-    height: 220vh;
+    min-height: 100vh;
   }
   .logo{
     height: 40px;
@@ -625,5 +706,56 @@ p{
     height: 40px;
     width: 50px;
     font-size: 15px;
+  }
+  .feed{
+    box-sizing: border-box;
+    margin: 4px 5% 50px 5%;
+    width: 90%;
+    background-color: #2345;
+    min-height: 200px;
+    border-radius: 5px 5px 0px 0px;
+    height: auto;
+
+  }
+  .profile{
+    height:50px;
+    width: 50px;
+    border-radius: 100px;
+    margin: 5px 1px 1px 4px;
+  }
+  .name{
+    margin:  -50px 100px 10px 70px;
+    font-size: 13px;
+  }
+  .usr{
+    padding-top: 20px;
+  }
+  .feed-text{
+    padding: 4px 4px 0px 4px;
+    margin-bottom: 40px;
+    font-size: 15px;
+  }
+  .comment-section{
+    background-color: #2345;
+    position: absolute;
+    margin: 0px 0% 0px 0%;
+    width: 90%;
+    border-radius: 0px 0px 5px 5px;
+  }
+  .com{
+    margin-left: 10px;
+    color: white
+  }
+  .count{
+    margin-left: 20px;
+  }
+  .row{
+    box-sizing: border-box;
+    width: 90%;
+  }
+  .time{
+    margin-left: auto;
+    margin-right: 10px;
+    font-size: 12px;
   }
 }
